@@ -1,0 +1,783 @@
+// Primary
+$StrongCyan: hsl(171, 66%, 44%);
+$LightBlue: hsl(233, 100%, 69%);
+// Neutral
+$DarkGrayishBlue: hsl(210, 10%, 33%);
+$GrayishBlue: hsl(201, 11%, 66%);
+
+$fontTitle :1.3rem;
+$fontText:0.9rem;
+$black :rgb(74,82,90);
+html {
+    font-size: 62.5%;
+  }
+  *
+  {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+  }
+  a {
+    text-decoration: none;
+  }
+  @mixin size($width, $height) {
+    width: $width;
+    height: $height;
+  }
+  @mixin flexCen($align, $just, $wrap, $direct) {
+    display: flex;
+    align-items: $align;
+    justify-content: $just;
+    flex-wrap: $wrap;
+    flex-direction: $direct;
+  }
+
+
+  .header
+  {
+      @include size(100%,25rem);
+      display: flex;
+      flex-direction: column;
+      background-image: url(./images/bg-header-desktop.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-clip: border-box;
+      &__logo
+      {
+          @include size(6rem,6rem);
+          margin:3rem auto 2rem;
+      }
+      &__title
+      {
+          text-align: center;
+          color:rgb(74,82,90);
+          font-size: 1.8rem;
+          font-weight: 500;
+      }
+      &__content
+      {
+          text-align: center;
+          color:$GrayishBlue;
+          font-size: 1rem;
+          max-width: 30rem;
+          margin:1.5rem auto;
+      }
+      .button
+      {
+          display: flex;
+          flex-direction: row;
+          margin: 1.5rem auto 2rem;
+          &__ios
+          {
+              @include size(12rem,2.5rem);
+              border-radius: 2rem;
+              background-color: $StrongCyan;
+              outline: none;
+              border:1px solid $StrongCyan;
+              cursor: pointer;
+              margin-right: 0.5rem;
+              color:white;
+              transition: all 0.10s linear;
+              &:hover
+              {
+                  box-shadow: 0 3px 10px 1px $StrongCyan;
+                  opacity:0.9;
+                  color:rgb(0, 0, 0);
+                  transform: translateY(-5%);
+              }
+          }
+          &__mac
+          {
+              @include size(12rem,2.5rem);
+              border-radius: 2rem;
+              background-color: $LightBlue;
+              outline: none;
+              border:1px solid $LightBlue;
+              cursor: pointer;
+              color:white;
+              margin-left: 0.5rem;
+              transition: all 0.10s linear;
+              &:hover
+              {
+                  box-shadow: 0 3px 10px 1px $LightBlue;
+                  opacity:0.9;
+                  color:rgb(0, 0, 0);
+                  transform: translateY(-5%);
+              }
+          }
+      }
+  }
+
+  .keep
+  {
+      @include size(100%,38rem);
+      background-color: rgb(250,250,250);
+    //   background-color: royalblue;
+      &__title
+      {
+          text-align: center;
+          font-size: 1.3rem;
+          margin:2rem auto 1rem;
+      }
+      &__text
+      {
+          text-align: center;
+          margin:0 auto 3rem;
+          max-width: 30rem;
+          font-size: 0.9rem;
+      }
+      &__content
+      {
+          display: flex;
+          flex-direction: row;
+          &-lap
+          {
+              @include size(32rem,25rem);
+              object-fit: cover;
+              object-position: center;
+          }
+          &-right
+          {
+              margin:3rem 0 0 5rem;
+              .item
+              {
+                  line-height: 2;
+                  margin-bottom: 2rem;
+                  .name
+                  {
+                      color:rgb(74,82,90);
+                      font-size: 1.1rem;
+                  }
+                  .info
+                  {
+                      max-width: 15rem;
+                      font-size: 0.8rem;
+                      color:$GrayishBlue;
+                  }
+              }
+          }
+      }
+  }
+
+  .access
+  {
+      display: flex;
+      flex-direction: column;
+    //   background-color: red;
+      @include size(100%,32rem);
+      &__title
+      {
+        text-align: center;
+        font-size: $fontTitle;
+        margin-bottom: 2rem;
+      }
+      &__text
+      {
+        text-align: center;
+        font-size: $fontText;
+        margin-bottom: 5rem;
+      }
+      &__image
+      {
+          @include size(36rem,21rem);
+          margin:0 auto;
+          object-fit: cover;
+          object-position: center;
+      }
+  }
+
+  .super
+  {
+      display: flex;
+      flex-direction: column;
+  
+    //   background-color: orange;
+      @include size(100%,32rem);
+      &__title
+      {
+          text-align: center;
+          font-size: $fontTitle;
+          margin-bottom: 1.5rem;
+          margin-top: 1rem;
+      }
+      &__text
+      {
+          text-align: center;
+          font-size: $fontText;
+          margin-bottom: 3rem;
+      }
+      &__info
+      {
+          display: flex;
+          flex-direction: row;
+          margin:0 auto;
+          margin-bottom: 4rem;
+          &-item
+          {
+              max-width: 20rem;
+              height: 11rem;
+            
+              .icon
+              {
+                  @include size(2.5rem,1.5rem);
+                  object-fit: cover;
+                  margin:1rem 0 0 6.3rem;
+                  color: $GrayishBlue;
+              }
+              .name
+              {
+
+                font-size: 1.3rem;
+                text-align: center;
+                margin:1rem 0 1.5rem 0rem;
+                color:$DarkGrayishBlue;
+              }
+              .desc
+              {
+                font-size: 0.8rem;
+                max-width: 15rem;
+                text-align: center;
+                color: $GrayishBlue;
+              }
+          }
+      }
+      &__company
+      {
+          margin-left: -1.5rem;
+          &-item
+          {
+              margin-left: 6rem;
+          }
+      }
+  }
+  .clipboard
+  {
+    @include size(100%,20rem);
+    display: flex;
+    flex-direction: column;
+    // background-color: $LightBlue;
+    padding-top: 4rem;
+    transition: all 0.5s linear;
+    &__title
+    {
+        text-align: center;
+        color:rgb(74,82,90);
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    &__content
+    {
+        text-align: center;
+        color:$GrayishBlue;
+        font-size: 1rem;
+        max-width: 30rem;
+        margin:1.5rem auto;
+    }
+    .button
+    {
+        display: flex;
+        flex-direction: row;
+        margin: 1.5rem auto 2rem;
+        &__ios
+        {
+            @include size(12rem,2.5rem);
+            border-radius: 2rem;
+            background-color: $StrongCyan;
+            outline: none;
+            border:1px solid $StrongCyan;
+            cursor: pointer;
+            margin-right: 0.5rem;
+            color:white;
+            transition: all 0.10s linear;
+            &:hover
+            {
+                box-shadow: 0 3px 10px 1px $StrongCyan;
+                opacity:0.9;
+                color:rgb(0, 0, 0);
+                transform: translateY(-5%);
+            }
+        }
+        &__mac
+        {
+            @include size(12rem,2.5rem);
+            border-radius: 2rem;
+            background-color: $LightBlue;
+            outline: none;
+            border:1px solid $LightBlue;
+            cursor: pointer;
+            color:white;
+            margin-left: 0.5rem;
+            transition: all 0.10s linear;
+            &:hover
+            {
+                box-shadow: 0 3px 10px 1px $LightBlue;
+                opacity:0.9;
+                color:rgb(0, 0, 0);
+                transform: translateY(-5%);
+            }
+        }
+    }
+}
+
+.footer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    @include size(100%,6rem);
+    background-color: rgb(231, 228, 228);
+    transition: all 0.2s linear;
+    &__logo
+    {
+        @include size(3rem,3rem);
+        object-fit: cover;
+    }
+    .moreinfo
+    {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 15 rem;
+      margin-left: 5rem;
+      margin-top: 0.5rem;
+      a:first-child
+      {
+          margin: -0.3rem 4rem 1rem -8rem;
+          cursor: pointer;
+          
+      }
+      a:nth-child(2)
+      {
+          margin:-0.3rem 4rem 0rem 0rem;
+          cursor: pointer;
+      }
+      a:nth-child(3)
+      {
+          margin:-0.3rem 3rem 0rem 0rem;cursor: pointer;
+      }
+      a:nth-child(4)
+      {
+          margin:1.5rem 0rem 0rem -0rem;
+          transform: translateX(-540%);cursor: pointer;
+      }
+      a:nth-child(5)
+      {
+          margin:1.5rem 0rem 0rem -0rem;
+          transform: translateX(-615%);cursor: pointer;
+      }
+      a:hover
+      {
+          color:$StrongCyan;
+      }
+    }
+    .social
+    {
+        margin-left: -2rem;
+        transition: all 0.25s linear;
+        .fab
+        {
+            margin-left: 2rem;
+            font-size: 1.5rem;
+            color:$DarkGrayishBlue;
+            cursor: pointer;
+            &:hover
+            {
+                transform: scale(1.3);
+                color:$StrongCyan;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:769px)
+{
+    .header
+    {
+        @include size(100%,32rem);
+        display: flex;
+        flex-direction: column;
+        background-image: url(./images/bg-header-mobile.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-clip: border-box;
+        &__logo
+        {
+            @include size(6rem,6rem);
+            margin:3rem auto 2rem;
+        }
+        &__title
+        {
+            text-align: center;
+            color:rgb(74,82,90);
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+        &__content
+        {
+            text-align: center;
+            color:$GrayishBlue;
+            font-size: 1rem;
+            max-width: 30rem;
+            margin:1.5rem auto;
+        }
+        .button
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+             margin: 1.5rem auto 2rem;
+            &__ios
+            {
+                @include size(12rem,2.5rem);
+                border-radius: 2rem;
+                background-color: $StrongCyan;
+                outline: none;
+                border:1px solid $StrongCyan;
+                cursor: pointer;
+                margin-bottom: 0.5rem;
+                color:white;
+                transition: all 0.10s linear;
+                &:hover
+                {
+                    box-shadow: 0 3px 10px 1px $StrongCyan;
+                    opacity:0.9;
+                    color:rgb(0, 0, 0);
+                    transform: translateY(-5%);
+                }
+            }
+            &__mac
+            {
+                @include size(12rem,2.5rem);
+                border-radius: 2rem;
+                background-color: $LightBlue;
+                outline: none;
+                border:1px solid $LightBlue;
+                cursor: pointer;
+                color:white;
+                margin-left: -0.5rem;
+                transition: all 0.10s linear;
+                &:hover
+                {
+                    box-shadow: 0 3px 10px 1px $LightBlue;
+                    opacity:0.9;
+                    color:rgb(0, 0, 0);
+                    transform: translateY(-5%);
+                }
+            }
+        }
+    }
+  
+    .keep
+    {
+        @include size(100%,70rem);
+        background-color: rgb(250,250,250);
+      //   background-color: royalblue;
+        &__title
+        {
+            text-align: center;
+            font-size: 1.3rem;
+            margin:2rem auto 1rem;
+        }
+        &__text
+        {
+            text-align: center;
+            margin:0 auto 3rem;
+            max-width: 30rem;
+            font-size: 0.9rem;
+        }
+        &__content
+        {
+            display: flex;
+            flex-direction: column;
+            &-lap
+            {
+                @include size(15rem,15rem);
+                object-fit: cover;
+                object-position: center;
+                margin:0 auto;
+            }
+            &-right
+            {
+                margin:3rem auto 5rem;
+                .item
+                {
+                    line-height: 1.5;
+                    margin-bottom: 2rem;
+                    .name
+                    {
+                        color:rgb(74,82,90);
+                        font-size: 1.1rem;
+                        text-align: center;
+                    }
+                    .info
+                    {
+                        font-size: 0.8rem;
+                        color:$GrayishBlue;
+                        margin:1rem;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+  
+    .access
+    {
+        display: flex;
+        flex-direction: column;
+      //   background-color: red;
+        @include size(100%,32rem);
+        &__title
+        {
+          text-align: center;
+          font-size: $fontTitle;
+          margin-bottom: 2rem;
+        }
+        &__text
+        {
+          text-align: center;
+          font-size: $fontText;
+          margin-bottom: 5rem;
+          max-width: 15rem;
+          text-align: center;
+          margin:0rem auto 3rem;
+        }
+        &__image
+        {
+            @include size(15rem,15rem);
+            margin:0 auto;
+            object-fit: cover;
+            object-position: left;
+
+        }
+    }
+  
+    .super
+    {
+        display: flex;
+        flex-direction: column;
+    
+      //   background-color: orange;
+        @include size(100%,65rem);
+        &__title
+        {
+            text-align: center;
+            font-size: $fontTitle;
+            margin-bottom: 1.5rem;
+            margin-top: 1rem;
+        }
+        &__text
+        {
+            text-align: center;
+            font-size: $fontText;
+            margin-bottom: 3rem;
+        }
+        &__info
+        {
+            display: flex;
+            flex-direction: column;
+            margin:0 auto;
+            margin-bottom: 2rem;
+            &-item
+            {
+                max-width: 20rem;
+                height: 11rem;
+              
+                .icon
+                {
+                    @include size(2.5rem,1.5rem);
+                    object-fit: cover;
+                    margin:1rem 0 0 6.3rem;
+                    color: $GrayishBlue;
+                }
+                .name
+                {
+  
+                  font-size: 1.3rem;
+                  text-align: center;
+                  margin:1rem 0 1.5rem 0rem;
+                  color:$DarkGrayishBlue;
+                }
+                .desc
+                {
+                  font-size: 0.8rem;
+                  max-width: 15rem;
+                  text-align: center;
+                  color: $GrayishBlue;
+                }
+            }
+        }
+        &__company
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            // margin:0 auto;
+            margin-left: -6rem;
+            &-item
+            {
+               @include size(5rem,3rem);
+               margin-bottom: 1rem;
+            }
+        }
+    }
+    .clipboard
+    {
+      @include size(100%,25rem);
+      display: flex;
+      flex-direction: column;
+      // background-color: $LightBlue;
+      padding-top: 4rem;
+      transition: all 0.5s linear;
+      &__title
+      {
+          text-align: center;
+          color:rgb(74,82,90);
+          font-size: 1.5rem;
+          font-weight: 500;
+      }
+      &__content
+      {
+          text-align: center;
+          color:$GrayishBlue;
+          font-size: 1rem;
+          max-width: 30rem;
+          margin:1.5rem auto;
+      }
+      .button
+      {
+          display: flex;
+          flex-direction:column;
+          margin: 1.5rem auto 2rem;
+          &__ios
+          {
+              @include size(12rem,2.5rem);
+              border-radius: 2rem;
+              background-color: $StrongCyan;
+              outline: none;
+              border:1px solid $StrongCyan;
+              cursor: pointer;
+              margin-bottom: 0.5rem;
+              color:white;
+              transition: all 0.10s linear;
+              &:hover
+              {
+                  box-shadow: 0 3px 10px 1px $StrongCyan;
+                  opacity:0.9;
+                  color:rgb(0, 0, 0);
+                  transform: translateY(-5%);
+              }
+          }
+          &__mac
+          {
+              @include size(12rem,2.5rem);
+              border-radius: 2rem;
+              background-color: $LightBlue;
+              outline: none;
+              border:1px solid $LightBlue;
+              cursor: pointer;
+              color:white;
+              margin-left: 0rem;
+              transition: all 0.10s linear;
+              &:hover
+              {
+                  box-shadow: 0 3px 10px 1px $LightBlue;
+                  opacity:0.9;
+                  color:rgb(0, 0, 0);
+                  transform: translateY(-5%);
+              }
+          }
+      }
+  }
+  
+  .footer
+  {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      @include size(100%,20rem);
+      background-color: rgb(231, 228, 228);
+      transition: all 0.2s linear;
+      &__logo
+      {
+          @include size(3rem,3rem);
+          object-fit: cover;
+        //   margin-left: 2rem;
+      }
+      .moreinfo
+      {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-left: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        // max-width: 15 rem;
+        // margin-left: 5rem;
+        // margin-top: 0.5rem;
+        a:first-child
+        {
+            margin: 0;
+            cursor: pointer;
+            
+        }
+        a:nth-child(2)
+        {
+            margin:0;
+            cursor: pointer;
+        }
+        a:nth-child(3)
+        {
+            margin:0;cursor: pointer;
+        }
+        a:nth-child(4)
+        {
+            margin:0;
+            transform: translateX(-1%);
+            cursor: pointer;
+        }
+        a:nth-child(5)
+        {
+            margin:0;
+            transform: translateX(-0.7%);
+            cursor: pointer;
+        }
+        a:hover
+        {
+            color:$StrongCyan;
+        }
+      }
+      .social
+      {
+        //   margin-left: 1rem;
+          transition: all 0.25s linear;
+          margin:0 auto;
+          .fab
+          {
+              margin-left: 2rem;
+              font-size: 1.5rem;
+              color:$DarkGrayishBlue;
+              cursor: pointer;
+              &:hover
+              {
+                  transform: scale(1.3);
+                  color:$StrongCyan;
+              }
+              &:last-child
+              {
+                  margin-right: 1rem;
+              }
+          }
+      }
+  }
+}
